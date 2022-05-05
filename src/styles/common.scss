@@ -1,4 +1,6 @@
-body {
+@import 'swiper-cus.scss';
+
+body{
     // height: 100vh;
 }
 
@@ -13,18 +15,29 @@ body {
 .app-container {
     display: flex;
     flex-direction: column;
-    background-color: pink;
+    //background-color: pink;
     min-height: 100vh;
+    text-align: left;
     //min-height: 100vh;
 }
 
 .main {
-    background-color: gray;
+    //background-color: gray;
     flex: 1;
     //min-height: calc(100vh - 56px - 168px);
 }
 
 .footer {
     background-color: green;
+    text-align: center;
+    border-top: #282c34 solid 2px;
     //position: relative;
+}
+
+.index-head{
+    background-color: gray;
+}
+
+.contents{
+    padding: 10px;
 }

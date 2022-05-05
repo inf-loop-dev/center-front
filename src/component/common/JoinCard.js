@@ -1,47 +1,47 @@
-import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React, {useState} from 'react';
+import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import "swiper/css/navigation";
-import { Navigation } from "swiper";
-import data from '../../data';
+import data from '../../data/data';
+import {Button, Card} from "react-bootstrap";
+import moment from "moment";
+import 'moment/locale/ko'
 
-
-function JoinCard() {
+function JoinCard(props) {
+    const makeDDay = (date) => {
+        const day = (moment.duration(moment(date).startOf('days').diff(moment().startOf('days'))).days())
+        return day > 0 ? "D-" + day :
+            day == 0 ? "D-Day" :
+                "D+" + -day
+    }
     //let data = [1,2,3,4,5,6,7,8];
-    let [meets, meetsChange] = useState(data);
     return (
-        <div>
-            <Swiper
-                navigation={true} s
-                modules={[Navigation]}
-                spaceBetween={50}
-                slidesPerView={3}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
-            >
-                {
-                    meets.map(element => {
-                        return (
-                            <SwiperSlide>
-                                <div>
-                                    <p>{element.id}</p>
-                                    <p>{element.title}</p>
-                                    <p>{element.담당자}</p>
-                                    <p>{element.요일}</p>
-                                    <p>{element.content}</p>
-                                    <p>{element.price}</p>
+        <Card className="w-100" style={{
+            minWidth: 0,
+        }}>
+            <Card.Header>
+                {props.info.title}
+            </Card.Header>
+            <Card.Body>
+                <div className="row">
+                    <div className="col">
+                        <div>{moment(props.info.date).format('yyyy-MM-DD hh:mm')}</div>
+                        {/*<p>{props.info.id}</p>*/}
+                        {/*<p>{props.info.담당자}</p>*/}
 
-                                </div>
-
-
-                            </SwiperSlide>
-                        )
-                    })
-                }
-
-            </Swiper>
-
-        </div>
+                        {/*<p>{props.info.content}</p>*/}
+                        {/*<p>{props.info.price}</p>*/}
+                    </div>
+                    <div
+                        className="col-auto"
+                    >
+                        <Button>
+                            참석
+                        </Button>
+                    </div>
+                </div>
+            </Card.Body>
+        </Card>
     )
 }
 
