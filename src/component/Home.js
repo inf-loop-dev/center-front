@@ -5,7 +5,7 @@ import "swiper/css/navigation";
 
 import CodeSwiper from './CODE/CodeSwiper';
 import StudySwiper from './STUDY/StudySwiper';
-import {getBreakpoint, moreThan} from "../modules/breakpoint";
+import {getBreakpoint, breakpointValue} from "../modules/breakpoint";
 
 
 function Home() {
@@ -13,10 +13,7 @@ function Home() {
     const [slidesNum,setSlidesNum] = useState(3);
     //method
     const breakpointChanged=()=>{
-        setSlidesNum(moreThan("xs",getBreakpoint())?1:
-            moreThan("sm",getBreakpoint())?1.5:
-                moreThan("md",getBreakpoint())?2:
-                    moreThan("lg",getBreakpoint())?3:3.5)
+        setSlidesNum(breakpointValue(getBreakpoint(),1,1.5,2,2.5,3,3.5)) // 순서는 반드시 작은 순서대로 되어야함.
     }
 
     //

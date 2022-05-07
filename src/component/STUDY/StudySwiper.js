@@ -13,8 +13,8 @@ function StudySwiper(props) {
     return (<>
         <div className="container">
             <div className="contents">
+                <h5> 모집중인 스터디 </h5>
                 <Card>
-                    <Card.Header as={"h5"}>모집중인 스터디</Card.Header>
                     <Card.Body>
                         <Swiper
                             navigation={true}

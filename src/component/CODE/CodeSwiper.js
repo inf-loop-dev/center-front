@@ -27,12 +27,14 @@ function CodeSwiper(props) {
                                 onSlideChange={() => console.log('slide change')}
                                 onSwiper={(swiper) => console.log(swiper)}
                             >
-                                {meets.map(element => {
-                                    return (
-                                        <SwiperSlide>
-                                            <JoinCard info={element}/>
-                                        </SwiperSlide>)
-                                })}
+                                <div className="swiper-slide-cus">
+                                    {meets.map(element => {
+                                        return (
+                                            <SwiperSlide>
+                                                <JoinCard info={element}/>
+                                            </SwiperSlide>)
+                                    })}
+                                </div>
 
                             </Swiper>
                         </Card.Body>
