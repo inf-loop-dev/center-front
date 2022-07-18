@@ -3,9 +3,9 @@ import React, {useState, useEffect} from 'react';
 import 'swiper/css';
 import "swiper/css/navigation";
 
-import CodeSwiper from './CODE/CodeSwiper';
-import StudySwiper from './STUDY/StudySwiper';
-import {getBreakpoint, breakpointValue} from "../modules/breakpoint";
+import CodeSwiper from './CodeSwiper';
+import StudySwiper from './StudySwiper';
+import {getBreakpoint, breakpointValue} from "../../modules/breakpoint";
 
 
 function Home() {

@@ -1,33 +1,38 @@
 import React, {useState} from 'react';
 import 'swiper/css';
-import "swiper/css/navigation";
-import JoinCard from '../common/JoinCard';
-import {Card} from "react-bootstrap";
-import {Navigation} from "swiper";
+import "swiper/css/pagination";
+import StudyJoinCard from './StudyJoinCard';
+import {Card, Col, Row} from "react-bootstrap";
+import {Pagination} from "swiper";
 import {Swiper, SwiperSlide} from "swiper/react";
-import data from "../../data/data";
+import studyWeekData from "../../data/studyWeekData";
 
 function StudySwiper(props) {
-    let [meets, meetsChange] = useState(data);
+    let [meets, meetsChange] = useState(studyWeekData);
 
     return (<>
         <div className="container">
             <div className="contents">
-                <h5> 모집중인 스터디 </h5>
+                <Row>
+                    <Col className="mr-auto"><h5> 이번 주 모각코</h5></Col>
+                    <Col xs="auto" ><a>more+</a></Col>
+                </Row>
                 <Card>
-                    <Card.Body>
+                    <Card.Body style={{
+                        paddingBottom: "0px"
+                    }}>
                         <Swiper
-                            navigation={true}
-                            modules={[Navigation]}
+                            pagination={true}
+                            modules={[Pagination]}
                             spaceBetween={50}
                             slidesPerView={props.slidesNum}
                             onSlideChange={() => console.log('slide change')}
                             onSwiper={(swiper) => console.log(swiper)}
                         >
-                            {meets.map(element => {
+                            {meets.content.map(element => {
                                 return (
                                     <SwiperSlide>
-                                        <JoinCard info={element}/>
+                                        <StudyJoinCard info={element}/>
                                     </SwiperSlide>)
                             })}
 
