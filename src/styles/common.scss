@@ -1,4 +1,5 @@
 @import 'swiper-cus.scss';
+@import 'login.scss';
 
 body{
     // height: 100vh;
@@ -24,6 +25,7 @@ body{
 .main {
     //background-color: gray;
     flex: 1;
+    position: relative;
     //min-height: calc(100vh - 56px - 168px);
 }
 
@@ -36,6 +38,7 @@ body{
 
 .index-head{
     background-color: gray;
+    min-height: 100%;
 }
 
 .contents{

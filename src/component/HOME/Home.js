@@ -19,6 +19,15 @@ function Home() {
     //
     useEffect(()=>{
         breakpointChanged()
+        const url = process.env.REACT_APP_BACKEND_URL + '/api/test';
+        (async function() {
+            const res = await(await fetch(url, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({a: "a"})
+            })).json();
+            console.log(res)
+        })()
         window.addEventListener("resize", breakpointChanged)
         return ()=>{
             window.removeEventListener('resize', breakpointChanged)
@@ -31,7 +40,7 @@ function Home() {
                 <div className="container">
                     <div className="contents">
                         <h4><b>무한루프 코딩</b></h4>
-                        <p> 봄맞이, 신입 모집중 </p>
+                        <p> 봄맞이, 신입 모집중  </p>
                         <p> 일요일, 월요일 5명씩 가입 가능</p>
                         <p> 함께 성장하기 위한 개발자 놀이터 "무한루프 코딩"에 오신 것을 환영합니다.</p>
                     </div>

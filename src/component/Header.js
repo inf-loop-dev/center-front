@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Nav, Navbar, Container, NavDropdown } from 'react-bootstrap';
+import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 
 function Header() {
     return (
@@ -22,8 +22,7 @@ function Header() {
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">회원가입</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
+                        <Nav.Link href="/login">
                             로그인
                         </Nav.Link>
                     </Nav>

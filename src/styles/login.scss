@@ -1,0 +1,62 @@
+.login-container{
+  height: 100vh;
+  background-color: green;
+}
+
+.login-main{
+  display: flex;
+  height: 100%;
+  background-color: azure;
+}
+
+.login-card{
+  margin: auto;
+  width: 300px;
+}
+
+.login-card .card-title{
+  padding-top:1rem;
+  color: #61dafb;
+  text-align: center;
+}
+
+.login-card .form-label{
+  font-size: 0.6rem;
+  margin-bottom: 0.25rem;
+  color: #888;
+}
+
+.login-card input{
+  font-size: 0.7rem;
+}
+
+.login-card .login-button{
+  width: 100%;
+  border-radius: 10px;
+  background-color: #41bacb;
+  border-color:  #41bacb;
+  &:hover{
+    background-color:  #219aab;
+    border-color: #219aab;
+  }
+  &:focus, :active{
+    box-shadow: 0 0 0 0.1rem #219aab;
+  }
+}
+
+
+.google-icon{
+  height: 20px;
+  width: 20px;
+  background-image: url("~/src/images/google-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: auto;
+}
+
+.google-login{
+  display: flex;
+  height: 35px;
+  width: 35px;
+  border: rgb(87, 126, 217) 1px solid;
+}
